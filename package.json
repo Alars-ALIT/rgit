@@ -1,0 +1,17 @@
+{
+  "name": "rgit",
+  "version": "0.1.0",
+  "description": "",
+  "main": "rgit",
+  "scripts": {
+    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+  },
+  "bin" : { "rgit" : "./bin/rgit" },
+  "repository": { "type" : "git",
+                  "url" : "https://github.com/Alars-ALIT/rgit.git"
+                },
+  "keywords": [],
+  "dependencies": {
+    "walk": "~2.3.1"
+  }
+}

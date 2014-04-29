@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+var gitw = require("../lib/gitwalker.js");
+
+var args =  process.argv;
+
+var gitArgs = args.slice(2, args.length);
+var git = ["git"];
+var cmd = git.concat(gitArgs).join(" ");
+
+console.log(cmd);
+
+gitw.walk(process.cwd(), cmd, function(nrOfGitRoots) {
+	console.log("done: executed \"%s\" on %s nr of git roots", cmd, nrOfGitRoots);	
+});
+
