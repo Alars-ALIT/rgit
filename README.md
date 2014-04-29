@@ -1,0 +1,4 @@
+rgit
+====
+
+Recursive GIT
