@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var gitw = require("../lib/gitwalker.js");
-
+var colors = require('colors');
 var args =  process.argv;
 
 var gitArgs = args.slice(2, args.length);
@@ -8,8 +8,17 @@ var git = ["git"];
 var cmd = git.concat(gitArgs).join(" ");
 
 console.log(cmd);
+console.time('rgit');
+var status = gitw.walk(process.cwd(), cmd, function(status) {
+	console.log("done executing \"%s\" on %s nr of git roots".green, cmd, (status.nrOfGitRoots - status.nrOfGitErrors));	
 
-gitw.walk(process.cwd(), cmd, function(nrOfGitRoots) {
-	console.log("done: executed \"%s\" on %s nr of git roots", cmd, nrOfGitRoots);	
+	if(status.nrOfGitErrors) {
+		console.log("failed executing \"%s\" on %s nr of git roots".red, cmd, status.nrOfGitErrors);	
+	}	
+	console.timeEnd('rgit');
+});
+
+status.on("allDone", function() {
+	console.log(".. all done.");
 });
 

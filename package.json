@@ -6,12 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
   },
-  "bin" : { "rgit" : "./bin/rgit" },
-  "repository": { "type" : "git",
-                  "url" : "https://github.com/Alars-ALIT/rgit.git"
-                },
-  "keywords": [],
+  "bin": {
+    "rgit": "./bin/rgit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alars-ALIT/rgit.git"
+  },
+  "keywords": [
+    "git",
+    "recursive"
+  ],
   "dependencies": {
-    "walk": "~2.3.1"
+    "walk": "~2.3.1",
+    "colors": "~0.6.2"
   }
 }
