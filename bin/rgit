@@ -9,7 +9,8 @@ var cmd = git.concat(gitArgs).join(" ");
 
 console.log(cmd);
 console.time('rgit');
-var status = gitw.walk(process.cwd(), cmd, function(status) {
+var log = function(){};
+var status = gitw.walk(process.cwd(), cmd, log, function(status) {
 	console.log("done executing \"%s\" on %s nr of git roots".green, cmd, (status.nrOfGitRoots - status.nrOfGitErrors));	
 
 	if(status.nrOfGitErrors) {

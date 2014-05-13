@@ -1,10 +1,10 @@
 {
   "name": "rgit",
-  "version": "0.3.2",
-  "description": "",
+  "version": "0.3.3",
+  "description": "Recursive asynchronous GIT",
   "main": "rgit",
   "scripts": {
-    "test": "echo \"Error: no test specified! Configure in package.json\" && exit 1"
+    "test": "nodeunit test/test.js"
   },
   "bin": {
     "rgit": "./bin/rgit"
@@ -15,10 +15,12 @@
   },
   "keywords": [
     "git",
-    "recursive"
+    "recursive",
+    "async"
   ],
   "dependencies": {
     "walk": "~2.3.1",
-    "colors": "~0.6.2"
+    "colors": "~0.6.2",
+    "queue-async": "~1.0.7"
   }
 }
