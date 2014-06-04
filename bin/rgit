@@ -4,6 +4,11 @@ var colors = require('colors');
 var args =  process.argv;
 
 var gitArgs = args.slice(2, args.length);
+gitArgs.forEach(function(arg, idx) {
+	if(arg.indexOf(" ") != -1) {
+		gitArgs[idx] = "\"" + arg + "\"";
+	}
+}); 
 var git = ["git"];
 var cmd = git.concat(gitArgs).join(" ");
 
